@@ -23,19 +23,19 @@ class ConfiguruSite {
         const industriesVideos = [
             {
                 industry: 'real-estate',
-                src: '/files/videos/industries/real-estate.mp4'
+                src: '/configuru/files/videos/industries/real-estate.mp4'
             },
             {
                 industry: 'furniture',
-                src: '/files/videos/industries/furniture.mp4'
+                src: '/configuru/files/videos/industries/furniture.mp4'
             },
             {
                 industry: 'transportation',
-                src: '/files/videos/industries/transportation.mp4'
+                src: '/configuru/files/videos/industries/transportation.mp4'
             },
             {
                 industry: 'retail',
-                src: '/files/videos/industries/retail.mp4'
+                src: '/configuru/files/videos/industries/retail.mp4'
             },
         ]
 
