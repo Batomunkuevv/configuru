@@ -1,0 +1,64 @@
+html,
+body {
+    font-family: $fontFamily;
+    font-size: 16px;
+    line-height: 150%;
+    color: $fontColor;
+    font-weight: 400;
+    scrollbar-gutter: stable;
+    background: url("../images/background.png") 0 0 repeat;
+
+    @supports not selector(::-webkit-scrollbar) {
+        scrollbar-width: thin;
+        scrollbar-color: $mainColor #fff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $mainColor;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    ::selection {
+        background: $mainColor;
+        color: #fff;
+    }
+}
+
+body {
+    &.is-lock {
+        overflow: hidden;
+    }
+}
+
+// a
+
+a {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+// Img
+
+img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Svg
+
+svg {
+    max-width: 100%;
+}

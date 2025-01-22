@@ -1,0 +1,44 @@
+.running-line {
+    margin-top: auto;
+    padding: 8px 0;
+    background: #000;
+
+    @media (max-width: 992px) {
+        padding: 12px 0;
+    }
+
+    &__body {
+    }
+
+    &__wrapper {
+        transition-timing-function: linear;
+    }
+
+    &__slide {
+        width: fit-content !important;
+        font-size: calc($index * 2.401);
+        line-height: 1;
+        color: white;
+        text-shadow: 1px 1px #fff, -1px -1px #fff;
+        white-space: nowrap;
+
+        @media (max-width: 992px) {
+            font-size: calc($index * 1.506);
+        }
+
+        @supports (-webkit-text-stroke: 1px #fff) {
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+            text-shadow: none;
+        }
+
+        &--colored {
+            text-shadow: 1px 1px $mainColor, -1px -1px $mainColor;
+
+            @supports (-webkit-text-stroke: 1px $mainColor) {
+                -webkit-text-stroke: 1px $mainColor;
+                text-shadow: none;
+            }
+        }
+    }
+}

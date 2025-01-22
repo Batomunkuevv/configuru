@@ -1,0 +1,78 @@
+.project-table {
+    &__row {
+        display: grid;
+        grid-template-columns: 88px 1fr 1fr;
+        gap: 24px;
+
+        @media (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &:not(:last-child):not(.project-table__row--header) {
+            margin-bottom: 8px;
+
+            @media (max-width: 767px) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &--header {
+            margin-bottom: 24px;
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+
+    &__cell {
+        padding: 16px 24px 23px;
+        line-height: 1;
+        letter-spacing: 0;
+        border: 1px solid #000;
+        text-transform: uppercase;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        @media(max-width: 767px){
+            padding: 12px 15px 18px;
+        }
+
+        &--head {
+            padding: 16px 24px 21px;
+            border: unset;
+            background: $mainColor;
+            font-size: 18px;
+            letter-spacing: -0.3px;
+        }
+
+        &--number {
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            @media (max-width: 767px) {
+                width: 48px;
+                height: 48px;
+                background: $mainColor;
+            }
+        }
+    }
+
+    &__link {
+        color: inherit;
+
+        @media(max-width: 767px){
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: $mainColor;
+        }
+    }
+}
