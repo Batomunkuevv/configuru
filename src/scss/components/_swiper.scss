@@ -1,0 +1,31 @@
+@use "../base/globals" as *;
+
+.swiper {
+    &-pagination {
+        --swiper-pagination-bullet-horizontal-gap: 0;
+        --swiper-pagination-bullet-size: 6px;
+        --swiper-theme-color: #1e212e;
+        --swiper-pagination-bullet-inactive-opacity: 0.25;
+        --swiper-pagination-bullet-inactive-color: #1e212e;
+        margin-top: 32px;
+        position: static;
+        height: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        @media(max-width: 767px){
+            margin-top: 24px;
+        }
+
+        &-bullet {
+            transition: all 0.3s ease-in-out 0s;
+
+            &-active {
+                width: 8px !important;
+                height: 8px !important;
+            }
+        }
+    }
+}

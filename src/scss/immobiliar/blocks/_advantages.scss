@@ -1,0 +1,426 @@
+@use "../base/globals" as *;
+
+.advantages {
+    padding-top: 8.4rem;
+    padding-bottom: 32px;
+
+    @media (max-width: 1536px) {
+        padding: 120px 0 32px;
+    }
+
+    @media (max-width: 1200px) {
+        padding-top: 114px;
+        padding-bottom: 74px;
+    }
+
+    &__decorations {
+        & .decorations__ring--small {
+            left: 47.7%;
+            top: 7.9%;
+
+            @media (max-width: 768px) {
+                right: 27.2%;
+                top: 12.6%;
+            }
+        }
+
+        & .decorations__ring--middle {
+            bottom: 23.6%;
+            right: 14.9%;
+
+            @media (max-width: 768px) {
+                bottom: 38.1%;
+                right: 17.4%;
+            }
+        }
+
+        & .decorations__ring--big {
+            bottom: 17.2%;
+            left: 55.1%;
+
+            @media (max-width: 768px) {
+                bottom: 41%;
+                left: 14%;
+            }
+        }
+
+        & .decorations__ring--large {
+            left: 50.5%;
+            top: 8.6%;
+
+            @media (max-width: 768px) {
+                left: auto;
+                right: 13.4%;
+                top: 12.9%;
+            }
+        }
+
+        & .decorations__point {
+            right: 13.7%;
+            bottom: 21.3%;
+
+            @media (max-width: 768px) {
+                bottom: 36.8%;
+                right: 12.6%;
+            }
+        }
+    }
+
+    &__company {
+        top: 50%;
+        right: 0;
+        transform: translate(0, -6%);
+        font-size: 250px;
+        color: #9a9fa7;
+
+        @media (max-width: 1536px) {
+            font-size: rem(200);
+        }
+
+        @media (max-width: 1330px) {
+            font-size: rem(200);
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        @media (max-width: 992px) {
+            top: auto;
+            right: 50%;
+            transform: translate(50%, 1px);
+            bottom: 142px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: start;
+
+        @media (max-width: 1200px) {
+            gap: 32px;
+        }
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 250px;
+        }
+    }
+
+    &__content {
+        width: 860px;
+
+        @media (max-width: 992px) {
+            width: unset;
+        }
+    }
+
+    &__title {
+        margin-bottom: 41px;
+        font-size: rem(55);
+        line-height: 1;
+
+        @media (max-width: 1536px) {
+            font-size: rem(55);
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 992px) {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            font-size: rem(43);
+            line-height: toProcent(43, 40);
+            margin-bottom: 50px;
+        }
+
+        & span {
+            &:nth-child(2) {
+                font-size: rem(65);
+                line-height: toProcent(65, 55);
+
+                @media (max-width: 768px) {
+                    font-size: rem(43);
+                    line-height: toProcent(43, 40);
+                }
+            }
+        }
+
+        & .title__circle {
+            width: 165px;
+            height: 165px;
+            left: -42px;
+            transform: translate(0, -24%);
+
+            @media (max-width: 768px) {
+                width: 143px;
+                height: 143px;
+                left: 30px;
+                transform: translate(0, -35%);
+            }
+        }
+    }
+
+    &__gear {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        transition: all 0.2s linear 0s;
+
+        @media (max-width: 1200px) {
+            transition: all 0.5s ease-in 0s;
+        }
+
+        &.is-rotate {
+            animation: rotate 1s 1 linear;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+
+        &.is-fall {
+            transition: all 1s ease-in 0s;
+        }
+
+        &--small {
+            left: 10.7%;
+
+            @media (max-width: 992px) {
+                top: -5.4%;
+            }
+
+            @media (max-width: 768px) {
+                width: 63px;
+            }
+
+            &.is-fall {
+                top: 13.6%;
+            }
+        }
+
+        &--middle {
+            left: 72%;
+
+            @media (max-width: 992px) {
+                top: -8%;
+            }
+
+            @media (max-width: 768px) {
+                width: 80px;
+            }
+
+            &.is-fall {
+                top: 11.3%;
+            }
+        }
+
+        &--big {
+            left: 31.6%;
+
+            @media (max-width: 992px) {
+                top: -39%;
+            }
+
+            @media (max-width: 768px) {
+                width: 110px;
+            }
+
+            &.is-fall {
+                top: -14%;
+            }
+        }
+    }
+
+    &__list {
+        max-width: 699px;
+        padding-left: 1px;
+
+        @media (max-width: 992px) {
+            max-width: unset;
+            padding: 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 50px;
+
+            @media (max-width: 1536px) {
+                margin-bottom: 32px;
+            }
+
+            @media (max-width: 768px) {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    &__item-icon {
+        position: relative;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        width: 61px;
+        height: 63px;
+        flex: none;
+        border-radius: 50%;
+    }
+
+    &__item-icon--green {
+        border-color: #5bba47;
+
+        & .advantages__item-image {
+            background: #5bba47;
+        }
+
+        & .advantages__item-circles {
+            &::before,
+            &::after {
+                background: #5bba47;
+            }
+        }
+    }
+
+    &__item-icon--orange {
+        border-color: #ef4123;
+
+        & .advantages__item-image {
+            background: #ef4123;
+        }
+
+        & .advantages__item-circles {
+            &::before,
+            &::after {
+                background: #ef4123;
+            }
+        }
+    }
+
+    &__item-icon--pink {
+        border-color: #ef2385;
+
+        & .advantages__item-image {
+            background: #ef2385;
+        }
+
+        & .advantages__item-circles {
+            &::before,
+            &::after {
+                background: #ef2385;
+            }
+        }
+    }
+
+    &__item-icon--blue {
+        border-color: #5d53f5;
+
+        & .advantages__item-image {
+            background: #5d53f5;
+        }
+
+        & .advantages__item-circles {
+            &::before,
+            &::after {
+                background: #5d53f5;
+            }
+        }
+    }
+
+    &__item-image {
+        padding: 3px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    &__item-circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: rotate 10s infinite linear;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            left: 50%;
+            border-radius: 50%;
+        }
+
+        &::before {
+            top: -3px;
+        }
+
+        &::after {
+            bottom: -3px;
+        }
+    }
+
+    &__item-text {
+        font-size: rem(25);
+        line-height: toProcent(25, 30);
+
+        @media (max-width: 1536px) {
+            font-size: rem(18);
+            line-height: 150%;
+        }
+
+        @media (max-width: 1200px) {
+            font-size: rem(15);
+            line-height: toProcent(15, 25);
+        }
+    }
+
+    &__right {
+        position: relative;
+    }
+
+    &__circle {
+        right: -8.9%;
+        top: 13.5%;
+        width: 475px;
+        height: 475px;
+
+        @media (max-width: 1200px) {
+            width: 311px;
+            height: 311px;
+        }
+
+        @media (max-width: 992px) {
+            top: 3%;
+            right: -5%;
+        }
+    }
+
+    &__anteater {
+        margin-top: 125px;
+
+        @media (max-width: 992px) {
+            margin: 0;
+        }
+
+        @media (max-width: 576px) {
+            max-width: 352px;
+        }
+    }
+}

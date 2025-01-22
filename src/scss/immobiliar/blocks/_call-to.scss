@@ -1,0 +1,241 @@
+@use "../base/globals" as *;
+
+.call-to {
+    background: #f2fcf1;
+
+    &__decorations {
+        & .decorations__ring--small {
+            left: 47.2%;
+            top: 11%;
+
+            @media (max-width: 992px) {
+                border-color: #ffd5ae;
+                top: auto;
+                left: auto;
+                bottom: 4.2%;
+                right: 28%;
+            }
+        }
+
+        & .decorations__ring--middle {
+            right: 37%;
+            bottom: 32%;
+
+            @media (min-width: 992px) {
+                display: none;
+            }
+        }
+
+        & .decorations__ring--big {
+            bottom: 15.4%;
+            left: 42.8%;
+
+            @media (max-width: 992px) {
+                bottom: 3.1%;
+                left: 5.1%;
+                border-color: #5d53f5;
+            }
+        }
+
+        & .decorations__ring--large {
+            left: 50%;
+            top: 11.7%;
+
+            @media (max-width: 992px) {
+                top: auto;
+                left: auto;
+                right: 2.6%;
+                bottom: 12.7%;
+            }
+        }
+
+        & .decorations__point {
+            bottom: 30.6%;
+            right: 32.2%;
+
+            @media (min-width: 992px) {
+                display: none;
+            }
+        }
+    }
+
+    &__body {
+        padding-top: 19px;
+        display: flex;
+        align-items: start;
+        gap: 189px;
+
+        @media (max-width: 1536px) {
+            gap: 32px;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 1330px) {
+            padding-top: 69px;
+        }
+
+        @media (max-width: 1200px) {
+            padding-top: 87px;
+            padding-bottom: 103px;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            gap: 205px;
+        }
+    }
+
+    &__content {
+        margin-top: 126px;
+        width: 629px;
+
+        @media (max-width: 1536px) {
+            margin-top: 116px;
+        }
+
+        @media (max-width: 1330px) {
+            margin-top: 46px;
+        }
+
+        @media (max-width: 1200px) {
+            width: unset;
+            margin-top: 0;
+        }
+    }
+
+    &__title {
+        font-size: rem(50);
+        line-height: toProcent(50, 70);
+        margin-bottom: 50px;
+
+        @media (max-width: 1330px) {
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 1200px) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: rem(43);
+            line-height: toProcent(43, 40);
+            text-align: center;
+        }
+
+        & .title__circle {
+            left: -50px;
+            top: 13%;
+        }
+    }
+
+    &__form {
+        max-width: 620px;
+    }
+
+    &__company {
+        font-size: 300px;
+        color: #beeeb3;
+        right: 2.7%;
+        top: 45%;
+        z-index: -1;
+
+        @media (max-width: 1536px) {
+            font-size: rem(200);
+        }
+
+        @media (max-width: 1330px) {
+            font-size: rem(200);
+            top: 50%;
+            right: 0;
+        }
+
+        @media (max-width: 992px) {
+            top: auto;
+            right: 50%;
+            bottom: 301px;
+            transform: translate(50%, 0);
+        }
+    }
+
+    &__right {
+        position: relative;
+        max-height: 100%;
+    }
+
+    &__circle {
+        z-index: -2;
+        left: -5.6%;
+        bottom: 14%;
+        opacity: 1;
+        background: #5bba47;
+
+        @media (max-width: 1200px) {
+            left: -4%;
+            bottom: unset;
+            top: 17.2%;
+        }
+    }
+
+    &__anteater {
+        @media (max-width: 1536px) {
+            height: 42rem;
+        }
+
+        @media (max-width: 992px) {
+            height: 489px;
+        }
+
+        @media (max-width: 450px) {
+            height: unset;
+        }
+    }
+
+    &__dialog {
+        padding: 25px 27px 24px 103px;
+        position: absolute;
+        width: 303px;
+        right: -39%;
+        bottom: 21.2%;
+        background: #ffffff;
+        box-shadow: 0px 0px 20px rgba(130, 135, 152, 0.1), 20px 20px 50px rgba(130, 135, 152, 0.1);
+        border-radius: 20px;
+
+        @media (max-width: 1720px) {
+            right: 0;
+        }
+
+        @media (max-width: 992px) {
+            bottom: unset;
+            top: -25px;
+            right: 50%;
+            transform: translate(50%, -100%);
+            padding: 25px 27px 24px 83px;
+        }
+    }
+
+    &__dialog-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-38%, -24%);
+
+        @media (max-width: 1200px) {
+            width: 111px;
+            transform: translate(-39%, -26%);
+        }
+    }
+
+    &__dialog-title {
+        display: block;
+        font-size: rem(14);
+        line-height: toProcent(14, 17);
+        margin-bottom: 10px;
+    }
+
+    &__dialog-text {
+        font-size: rem(13);
+        line-height: toProcent(13, 22);
+        color: #9a9fa7;
+    }
+}

@@ -1,0 +1,30 @@
+.title {
+    position: relative;
+
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: -70px;
+        transform: translate(0, -36%);
+        width: 225px;
+        height: 225px;
+        background: #ffd5ae;
+        opacity: 0.3;
+        border-radius: 50%;
+        z-index: -1;
+
+        @media (max-width: 992px) {
+            width: 143px;
+            height: 143px;
+            left: -61px;
+        }
+
+        &--violet {
+            background: #c6c3fc;
+        }
+
+        &--green {
+            background: #beeeb3;
+        }
+    }
+}

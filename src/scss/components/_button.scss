@@ -1,0 +1,23 @@
+@use '../base/globals' as *;
+
+.button {
+    padding: 16px 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $mainGreenColor;
+    border: 1px solid $mainGreenColor;
+    box-shadow: 10px 10px 30px 0 rgba(91, 186, 71, 0.5);
+    border-radius: 32px;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease-in-out 0s;
+
+    &:hover {
+        background: transparent;
+        color: $mainGreenColor;
+    }
+}

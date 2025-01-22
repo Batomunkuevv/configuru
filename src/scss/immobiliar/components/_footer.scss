@@ -1,0 +1,69 @@
+@use "../base/globals" as *;
+
+
+.footer {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+
+    @media (max-width: 1536px) {
+        bottom: 16px;
+    }
+
+    @media (max-width: 992px) {
+        display: none;
+    }
+
+    &__body {
+        padding: 0 85px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 1536px) {
+            padding: 0 16px;
+        }
+    }
+
+    &__copyright {
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: 90px;
+        font-weight: 600;
+        font-size: rem(13);
+        line-height: toProcent13, 16;
+
+        &.is-white {
+            & .footer__navigation-separate {
+                color: #fff;
+            }
+
+            & .footer__scroll-link {
+                color: #fff;
+            }
+        }
+    }
+
+    &__number-block {
+    }
+
+    &__navigation-separate {
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    &__scroll-links {
+    }
+
+    &__scroll-link {
+        color: $color__font;
+        transition: all 0.3s ease-in-out 0s;
+
+        &:hover {
+            color: $color__main;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@use "../../base/globals" as *;
+
+.copyright {
+    font-weight: 600;
+    font-size: rem(13);
+    line-height: toProcent(13, 16);
+}

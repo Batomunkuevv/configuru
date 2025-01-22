@@ -1,0 +1,51 @@
+//*<Modules>=======================================================================================================
+
+@use "immobiliar/base/fonts";
+@use "immobiliar/base/animation";
+@use "immobiliar/base/nullstyle";
+@use "immobiliar/base/common";
+@use "immobiliar/base/main-grid";
+
+//*</Modules>=====================================================================================================
+
+//*<Header and footer>=================================================================================================
+
+@use "immobiliar/components/header";
+@use "immobiliar/components/footer";
+
+//*</Header and footer>=================================================================================================
+
+//*<Components>================================================================================================
+
+@use "immobiliar/components/small/company";
+@use "immobiliar/components/small/contacts-links";
+@use "immobiliar/components/small/copyright";
+@use "immobiliar/components/small/languages";
+@use "immobiliar/components/small/arrow";
+@use "immobiliar/components/small/privacy";
+@use "immobiliar/components/small/title";
+@use "immobiliar/components/small/decorations";
+@use "immobiliar/components/small/decoration-circle";
+@use "immobiliar/components/review";
+@use "immobiliar/components/small/video";
+@use "immobiliar/components/small/form";
+@use "immobiliar/components/small/input";
+@use "immobiliar/components/small/checkbox";
+@use "immobiliar/components/small/textarea";
+@use "immobiliar/components/small/btn";
+
+//*</Components>=================================================================================================
+
+//TODO<Blocks>=================================================================================================
+
+@use "immobiliar/blocks/hero";
+@use "immobiliar/blocks/render";
+@use "immobiliar/blocks/content";
+@use "immobiliar/blocks/reviews";
+@use "immobiliar/blocks/atmosphere";
+@use "immobiliar/blocks/simple-block";
+@use "immobiliar/blocks/advantages";
+@use "immobiliar/blocks/call-to";
+@use "immobiliar/blocks/animated";
+
+//TODO</Blocks>=================================================================================================

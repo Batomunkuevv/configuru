@@ -1,0 +1,44 @@
+@use "../../base/globals" as *;
+
+.languages {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 576px) {
+        gap: 20px;
+    }
+
+    &__item {
+        @media (max-width: 576px) {
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+
+        &.is-active .languages__link {
+            opacity: 1;
+            border-color: #fff;
+        }
+    }
+
+    &__link {
+        font-weight: 600;
+        font-size: rem(13);
+        line-height: toProcent(13, 16);
+        color: #ffffff;
+        opacity: 0.3;
+        transition: all 0.3s ease-in-out 0s;
+        border-bottom: 1px solid transparent;
+
+        @media (max-width: 768px) {
+            font-size: rem(15);
+            line-height: toProcent(15, 18);
+        }
+
+        &:hover {
+            color: #fff;
+            opacity: 1;
+        }
+    }
+}

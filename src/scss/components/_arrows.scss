@@ -1,0 +1,34 @@
+@use "../base/globals" as *;
+
+.arrows {
+    display: flex;
+    gap: 12px;
+
+    &__arrow {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $blackColor;
+        color: #fff;
+        transition: all 0.3s ease-in-out 0s;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+            background: $mainOrangeColor;
+        }
+
+        &:disabled {
+            background: rgba(28, 33, 58, 0.3);
+            pointer-events: none;
+        }
+
+        &--prev {
+        }
+
+        &--next {
+        }
+    }
+}

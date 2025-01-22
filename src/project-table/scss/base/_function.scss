@@ -1,0 +1,5 @@
+//!%
+@function toProcent($fz, $lh) {
+    $result: math.round(math.div($lh, $fz) * 100%);
+    @return $result;
+}

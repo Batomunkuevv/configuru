@@ -1,0 +1,92 @@
+@use "globals" as *;
+
+html,
+body {
+    font-family: $mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+    color: $colorFont;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $mainOrangeColor;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    scrollbar-width: 4px;
+    scrollbar-color: $mainOrangeColor #fff;
+
+    & * {
+        &:not(img) {
+            &::selection {
+                background: $mainOrangeColor;
+                color: #fff;
+            }
+        }
+    }
+}
+
+body {
+    background: $mainOrangeBgColor;
+
+    &.is-lock {
+        overflow: hidden !important;
+    }
+}
+
+a {
+    color: inherit;
+    transition: all 0.3s ease-in-out 0s;
+
+    &:not([class]) {
+        border-bottom: 1px solid transparent;
+        color: $mainBlueColor;
+
+        &:hover {
+            border-color: $mainBlueColor;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ibg {
+    position: relative;
+
+    & img,
+    & svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}

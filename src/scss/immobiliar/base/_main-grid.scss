@@ -1,0 +1,41 @@
+@use "globals" as *;
+
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1200px) {
+        overflow: hidden;
+    }
+}
+
+.container {
+    max-width: $maxWidthContainer;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (max-width: 1536px) {
+        max-width: 1360px;
+    }
+
+    @media (max-width: 1330px) {
+        max-width: 1200px;
+    }
+
+    @media (max-width: 1200px) {
+        max-width: 960px;
+    }
+    @media (max-width: 992px) {
+        max-width: 720px;
+    }
+    @media (max-width: 768px) {
+        max-width: 540px;
+    }
+    @media (max-width: 576px) {
+        max-width: none;
+        padding: 0 16px;
+    }
+}

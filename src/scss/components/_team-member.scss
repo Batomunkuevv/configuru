@@ -1,0 +1,57 @@
+@use "../base/globals" as *;
+
+.team-member {
+    &__image {
+        margin-bottom: 16px;
+        border-radius: 16px;
+        overflow: hidden;
+
+        @media(max-width: 576px){
+            margin-bottom: 8px;
+        }
+
+        &-ibg {
+            padding-top: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 4px;
+        font-size: 24px;
+        line-height: toProcent(24, 32);
+        font-weight: 600;
+
+        @media (max-width: 767px) {
+            font-size: 20px;
+            line-height: 130%;
+        }
+
+        @media (max-width: 576px) {
+            margin-bottom: 2px;
+            font-size: 12px;
+            line-height: toProcent(12, 18);
+        }
+    }
+
+    &__post {
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: toProcent(14, 20);
+
+        @media (max-width: 576px) {
+            margin-bottom: 0;
+            font-size: 10px;
+            line-height: toProcent(10, 16);
+        }
+    }
+
+    &__description {
+        font-size: 12px;
+        line-height: toProcent(12, 18);
+        font-weight: 400;
+
+        @media (max-width: 576px) {
+            display: none;
+        }
+    }
+}

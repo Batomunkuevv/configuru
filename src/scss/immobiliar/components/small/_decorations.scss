@@ -1,0 +1,128 @@
+@use "../../base/globals" as *;
+
+.decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+
+    & li {
+        position: absolute;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+    }
+
+    // Ring
+
+    &__ring {
+        border-style: solid;
+        border-radius: 50%;
+        border-color: $color__main;
+    }
+
+    &__ring--small {
+        width: 15px;
+        height: 15px;
+        border-width: 3px;
+    }
+
+    &__ring--middle {
+        width: 20px;
+        height: 20px;
+        border-width: 3px;
+    }
+
+    &__ring--big {
+        width: 25px;
+        height: 25px;
+        border-width: 5px;
+    }
+
+    &__ring--large {
+        border-width: 5px;
+        width: 35px;
+        height: 35px;
+    }
+
+    &__ring--light-orange {
+        border-color: #ffd5ae;
+    }
+
+    &__ring--blue {
+        border-color: #5d53f5;
+    }
+
+    &__ring--violet {
+        border-color: #c6c3fc;
+    }
+
+    &__ring--violet {
+        border-color: #c6c3fc;
+    }
+    &__ring--green {
+        border-color: #beeeb3;
+    }
+
+    // Point
+
+    &__point {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ef4123;
+    }
+
+    &__point--green {
+        background: #5bba47;
+    }
+
+    &__point--light-circle {
+        background: #ffd5ae;
+    }
+
+    // Circle
+
+    &__circle {
+        width: 225px;
+        height: 225px;
+        background: #c6c3fc;
+        opacity: 0.3;
+        border-radius: 50%;
+
+        @media (max-width: 992px) {
+            width: 143px;
+            height: 143px;
+        }
+
+        &--light-orange {
+            background: #ffd5ae;
+        }
+
+        &--middle {
+            width: 319px;
+            height: 319px;
+
+            @media (max-width: 992px) {
+                width: 191px;
+                height: 191px;
+            }
+        }
+
+        &--big {
+            width: 535px;
+            height: 535px;
+
+            @media (max-width: 1200px) {
+                width: 400px;
+                height: 400px;
+            }
+
+            @media (max-width: 992px) {
+                width: 279px;
+                height: 279px;
+            }
+        }
+    }
+}

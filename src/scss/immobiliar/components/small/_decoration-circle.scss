@@ -1,0 +1,38 @@
+@use "../../base/globals" as *;
+
+.decoration-circle {
+    position: absolute;
+    width: 535px;
+    height: 535px;
+    background: #ef4123;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.3;
+
+    @media (max-width: 1200px) {
+        width: 359px;
+        height: 359px;
+    }
+
+    @media (max-width: 400px) {
+        width: 250px;
+        height: 250px;
+    }
+
+    &--violet {
+        background: #c6c3fc;
+    }
+
+    &--black {
+        background: #1e212e;
+        opacity: 1;
+    }
+
+    &--green {
+        background: #beeeb3;
+    }
+
+    &--light-orange {
+        background: #ffd5ae;
+    }
+}

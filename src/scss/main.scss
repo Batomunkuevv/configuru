@@ -1,0 +1,43 @@
+//*<Base>=======================================================================================================
+
+@use "base/fonts";
+@use "base/animation";
+@use "base/reset";
+@use "base/common";
+@use "base/main-grid";
+
+//*</Base>=====================================================================================================
+
+//*<Components>================================================================================================
+
+@use "components/section";
+@use "components/scroll-button";
+@use "components/swiper";
+@use "components/arrows";
+@use "components/circled-icon";
+@use "components/input";
+@use "components/textarea";
+@use "components/button";
+@use "components/menu";
+@use "components/checkbox";
+@use "components/burger";
+@use "components/anteater-circle";
+@use "components/dialog";
+@use "components/company-slide";
+@use "components/team-member";
+@use "components/header";
+@use "components/footer";
+
+//*</Components>=================================================================================================
+
+//*<Sections>=================================================================================================
+
+@use "sections/hero-homepage";
+@use "sections/industries";
+@use "sections/unique-tool";
+@use "sections/collaboration";
+@use "sections/team";
+@use "sections/companies";
+@use "sections/why-choose-us";
+
+//*</Sections>=================================================================================================

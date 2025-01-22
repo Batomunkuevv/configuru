@@ -1,0 +1,58 @@
+@use "../base/globals" as *;
+
+.review {
+    padding: 51px 80px 50px 79px;
+    max-width: 850px;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 1536px) {
+        padding: 32px;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 42px 38px;
+        max-width: 550px;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 388px;
+    }
+
+    @media (max-width: 450px) {
+        max-width: 300px;
+        padding: 16px;
+    }
+
+    &__icon {
+        margin-bottom: 24px;
+        width: 126px;
+        height: 126px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    &__logo {
+        margin-top: 23px;
+        max-width: 96px;
+
+        @media (max-width: 1200px) {
+            margin-top: 25px;
+        }
+    }
+
+    & p {
+        font-weight: 400;
+        font-size: rem(21);
+        line-height: toProcent(21, 26);
+        color: #000000;
+
+        @media (max-width: 1200px) {
+            font-size: rem(15);
+            line-height: toProcent(15, 18);
+        }
+    }
+}

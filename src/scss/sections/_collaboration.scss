@@ -1,0 +1,228 @@
+@use "../base/globals" as *;
+
+.collaboration {
+    padding: 194px 0 202px;
+
+    @media (max-width: 1535px) {
+        padding: 120px 0;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 64px 0;
+    }
+
+    @media (max-width: 992px) {
+        padding-bottom: 0;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 24px;
+    }
+
+    &__circle {
+        &--blue-size-35 {
+            left: 64.3%;
+            top: 3%;
+        }
+
+        &--blue-size-25 {
+            top: -2.4%;
+            right: -92px;
+
+            @media (max-width: 1919px) {
+                right: 2%;
+                top: 0;
+            }
+        }
+
+        &--blue-size-20 {
+            bottom: -38px;
+            right: -37px;
+
+            @media (max-width: 1919px) {
+                right: 8%;
+            }
+        }
+
+        &--light-orange {
+            left: 60.8%;
+            top: 11px;
+        }
+
+        &--orange {
+            bottom: -61px;
+            right: -58px;
+
+            @media (max-width: 1919px) {
+                right: 3%;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            gap: 32px;
+            align-items: stretch;
+        }
+    }
+
+    &__content {
+        margin-top: 8px;
+        max-width: 1078px;
+    }
+
+    &__title {
+        max-width: 578px;
+
+        @media (max-width: 992px) {
+            max-width: unset;
+        }
+
+        &::before {
+            top: -5px;
+            left: 0;
+
+            @media (min-width: 992px) {
+                transform: translateX(-34%);
+            }
+
+            @media (max-width: 992px) {
+                top: -49px;
+            }
+        }
+    }
+
+    &__text {
+    }
+
+    &__list {
+        margin-bottom: 48px;
+        max-width: 948px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 32px;
+
+        @media (max-width: 1200px) {
+            gap: 24px;
+        }
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: start;
+        gap: 16px;
+
+        &-icon {
+        }
+
+        &-text {
+        }
+    }
+
+    &__companies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    &__company {
+        padding: 28px 24px;
+        min-width: 180px;
+        height: 120px;
+        background: #fff;
+        box-shadow: 4px 8px 40px rgba(30, 33, 46, 0.2);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 992px) {
+            padding: 24px 16px;
+            min-width: 121px;
+            max-width: 219px;
+            height: 81px;
+        }
+
+        &:first-child {
+            @media (max-width: 992px) {
+                max-width: 205px;
+            }
+        }
+
+        &:nth-child(3) {
+            @media (max-width: 992px) {
+                min-width: 108px;
+            }
+        }
+
+        &:last-child {
+            @media (max-width: 576px) {
+                flex: 1;
+            }
+        }
+
+        & img {
+            object-fit: contain;
+            width: auto;
+
+            @media (max-width: 992px) {
+                height: 100%;
+            }
+        }
+    }
+
+    &__anteater {
+        width: 360px;
+        flex: none;
+        position: relative;
+
+        @media (max-width: 1919px) {
+            margin-right: 96px;
+        }
+
+        @media (max-width: 1200px) {
+            width: 320px;
+            margin-right: 32px;
+        }
+
+        @media (max-width: 992px) {
+            margin: 0 auto;
+            width: calc(100% - 105px);
+            max-width: 400px;
+        }
+
+        @media (max-width: 374px) {
+            width: calc(100% - 48px);
+        }
+
+        &-circle {
+            transform: translate(-44.3%, -46%);
+
+            @media (max-width: 1200px) {
+                transform: translate(-50%, -47%);
+            }
+
+            @media (max-width: 992px) {
+                transform: translate(-50%, -48%);
+            }
+        }
+
+        &-image {
+            position: relative;
+
+            &-ibg {
+                @include ibg-padding(360, 604);
+            }
+        }
+    }
+}

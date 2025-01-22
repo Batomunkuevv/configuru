@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/components/_head.html', { 
+        'title': 'Immobilliar',
+        'styles': ['files/fullpage.min.css', 'files/swiper-bundle.min.css', 'css/immobiliar.css']
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/components/_header-immobiliar.html',{})
+            <main class="page">
+                @@include('html/immobiliar/_hero.html',{}) @@include('html/immobiliar/_render.html',{}) @@include('html/immobiliar/_content.html',{}) @@include('html/immobiliar/_atmosphere.html',{})
+                @@include('html/immobiliar/_animated.html',{}) @@include('html/immobiliar/_gamification.html',{}) @@include('html/immobiliar/_placement.html',{}) @@include('html/immobiliar/_personalize.html',{})
+                @@include('html/immobiliar/_maximize.html',{}) @@include('html/immobiliar/_reviews.html',{}) @@include('html/immobiliar/_advantages.html',{}) @@include('html/immobiliar/_call-to.html',{})
+            </main>
+            @@include('html/components/_footer-immobiliar.html',{})
+        </div>
+        <script src="js/fullpage.extensions.min.js"></script>
+        <script defer src="js/swiper-bundle.min.js"></script>
+        <script defer src="js/immobiliar.js"></script>
+    </body>
+</html>

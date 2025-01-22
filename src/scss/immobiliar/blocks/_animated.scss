@@ -1,0 +1,37 @@
+@use "../base/globals" as *;
+
+.animated {
+    @media (max-width: 1200px) {
+        padding-top: 140px;
+    }
+
+    &__circle {
+        background: #5d53f5;
+    }
+
+    &__hand {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 36.9%;
+
+        @media (max-width: 1200px) {
+            width: 56.9%;
+        }
+
+        @media (max-width: 576px) {
+            width: 77%;
+            right: -37px;
+        }
+
+        @media (max-width: 400px) {
+            width: 87%;
+        }
+
+        & img {
+            @media (max-width: 1920px) {
+                width: 100%;
+            }
+        }
+    }
+}

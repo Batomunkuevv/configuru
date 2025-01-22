@@ -1,0 +1,38 @@
+@use "../base/globals" as *;
+
+.company-slide {
+    &__logo {
+        margin-bottom: 32px;
+        margin-right: 120px;
+        width: auto;
+        height: 48px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 38px;
+            height: 32px;
+        }
+
+        & img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &__text {
+        padding: 32px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+
+        @media (min-width: 1200px) {
+            font-size: 18px;
+            line-height: toProcent(18, 28);
+        }
+
+        & p {
+            &:has(+ p) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

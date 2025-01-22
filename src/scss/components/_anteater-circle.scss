@@ -1,0 +1,33 @@
+@use "../base/globals" as *;
+
+.anteater-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+
+    @media (max-width: 1535px) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media (max-width: 992px) {
+        width: 360px;
+        height: 360px;
+    }
+
+    &--green {
+        background: $mainGreenLightColor;
+    }
+
+    &--blue {
+        background: $mainBlueLightColor;
+    }
+
+    &--orange {
+        background: $mainOrangeLightColor;
+    }
+}

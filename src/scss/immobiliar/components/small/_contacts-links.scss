@@ -1,0 +1,26 @@
+@use "../../base/globals" as *;
+
+.contacts-links {
+    display: flex;
+    align-items: center;
+    gap: 66px;
+
+    &__item {
+        font-weight: 600;
+        font-size: rem(13);
+        line-height: toProcent(13, 16);
+
+        &:not(:last-child) {
+            &::after {
+                content: "/";
+                position: absolute;
+                top: 50%;
+                right: -36px;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    &__link {
+    }
+}

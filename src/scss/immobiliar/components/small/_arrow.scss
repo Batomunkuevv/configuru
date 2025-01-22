@@ -1,0 +1,26 @@
+@use "../../base/globals" as *;
+
+.arrow {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border: 2px solid #1e212e;
+    transition: all 0.3s ease-in-out 0s;
+    border-radius: 50%;
+
+
+    &:hover{
+        color: $color__main;
+        border-color: $color__main;
+    }
+
+    &--prev {
+        transform: rotate(180deg);
+    }
+    
+    &--next {
+    }
+}

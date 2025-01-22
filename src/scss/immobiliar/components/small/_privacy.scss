@@ -1,0 +1,11 @@
+@use "../../base/globals" as *;
+
+.privacy {
+    font-weight: 600;
+    font-size: rem(13);
+    line-height: toProcent(13, 16);
+
+    @media (max-width: 1200px) {
+        order: 2;
+    }
+}

@@ -1,0 +1,223 @@
+@use "../base/globals" as *;
+
+.atmosphere {
+    background: #f2fcf1;
+    overflow: visible;
+    z-index: 2;
+
+    & .container {
+        display: flex;
+        align-items: center;
+        @media (min-width: 1200px) {
+            height: calc(100vh - 60px);
+        }
+    }
+
+    &__hand {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 36.9%;
+
+        @media (max-width: 1200px) {
+            width: 56.9%;
+        }
+
+        @media (max-width: 576px) {
+            width: 77%;
+            right: -37px;
+        }
+
+        @media (max-width: 400px) {
+            width: 87%;
+        }
+
+        & img {
+            @media (max-width: 1920px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__decorations {
+        & .decorations__ring--small {
+            left: 32.3%;
+            top: 11.6%;
+
+            @media (max-width: 992px) {
+                left: 6.3%;
+                top: auto;
+                bottom: 18.5%;
+            }
+        }
+
+        & .decorations__ring--middle {
+            bottom: 27.4%;
+            left: 44.9%;
+
+            @media (max-width: 992px) {
+                right: 10%;
+                top: 23.4%;
+                bottom: auto;
+                left: auto;
+            }
+        }
+
+        & .decorations__ring--big {
+            left: 9.2%;
+            bottom: 23%;
+
+            @media (max-width: 768px) {
+                left: 52.9%;
+                bottom: 7%;
+            }
+        }
+
+        & .decorations__ring--large {
+            left: 35%;
+            top: 12.2%;
+
+            @media (max-width: 992px) {
+                top: auto;
+                bottom: 12.1%;
+                left: 16%;
+            }
+        }
+
+        & .decorations__point {
+            bottom: 25.1%;
+            left: 46.6%;
+
+            @media (max-width: 992px) {
+                bottom: auto;
+                left: auto;
+                top: 28%;
+                right: 5.3%;
+            }
+        }
+    }
+
+    &__circle {
+        background: #5bba47;
+        top: -17%;
+        right: -23%;
+        opacity: 0.3;
+
+        @media (max-width: 768px) {
+            width: 317px;
+            height: 317px;
+            top: -9%;
+            right: -43%;
+        }
+    }
+
+    &__body {
+        padding-top: 7px;
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        gap: 155px;
+
+        @media (max-width: 1536px) {
+            gap: 64px;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 90px 0 160px;
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+
+    &__content {
+        max-width: 668px;
+        flex: 1 1 auto;
+
+        & p {
+            @media (max-width: 992px) {
+                font-size: rem(16);
+                line-height: toProcent(16, 25);
+            }
+        }
+    }
+
+    &__title {
+        margin-top: -6px;
+
+        @media (max-width: 1200px) {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            font-size: rem(25);
+            line-height: toProcent(25, 30);
+            margin-bottom: 5px;
+        }
+
+        & .title__circle {
+            left: -6px;
+            transform: translate(0, -30%);
+        }
+    }
+
+    &__video {
+        flex: none;
+        width: 690px;
+        height: 530px;
+
+        @media (max-width: 1536px) {
+            width: 600px;
+            height: 440px;
+        }
+
+        @media (max-width: 1200px) {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        @media (max-width: 768px) {
+            height: 350px;
+        }
+
+        @media (max-width: 576px) {
+            max-width: 347px;
+            height: 268px;
+        }
+
+        @media (max-width: 400px) {
+            height: 234px;
+        }
+
+        & .ipad__item {
+            top: 16px;
+            left: 18px;
+            width: calc(100% - 35px);
+            height: calc(100% - 30px);
+            border-radius: 20px;
+
+            @media (max-width: 1536px) {
+                top: 15px;
+                left: 16px;
+                width: calc(100% - 31px);
+                border-radius: 15px;
+            }
+
+            @media (max-width: 768px) {
+                top: 8px;
+                left: 9px;
+                width: calc(100% - 18px);
+                height: calc(100% - 17px);
+                border-radius: 10px;
+            }
+
+            @media (max-width: 400px) {
+                top: 8px;
+                left: 8px;
+                width: calc(100% - 15px);
+                height: calc(100% - 15px);
+                border-radius: 8px;
+            }
+        }
+    }
+}

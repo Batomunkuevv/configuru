@@ -1,0 +1,152 @@
+@use "../base/globals" as *;
+
+.team {
+    padding: 143px 0;
+
+    @media (max-width: 1535px) {
+        padding: 120px 0;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 64px 0;
+    }
+
+    @media (max-width: 767px) {
+        padding: 32px 0;
+    }
+
+    &__title {
+        max-width: 871px;
+        letter-spacing: unset;
+
+        @media (min-width: 767px) {
+            margin: 0 auto 24px;
+            font-size: 36px;
+            line-height: toProcent(36, 44);
+            text-align: center;
+        }
+
+        @media (max-width: 767px) {
+            margin-bottom: 32px;
+            font-size: 24px;
+            line-height: toProcent(24, 32);
+        }
+
+        & span {
+            color: $mainOrangeColor;
+        }
+
+        &::before {
+            top: -49px;
+
+            @media (min-width: 767px) {
+                display: none;
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+    }
+
+    &__tabs {
+        margin-right: 120px;
+        margin-bottom: 24px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        @media (max-width: 767px) {
+            margin-right: 0;
+        }
+
+        @media (max-width: 576px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__tab {
+        padding: 10px 13px;
+        height: 44px;
+        background: transparent;
+        border: 1px solid $mainOrangeColor;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 600;
+        white-space: nowrap;
+        color: $mainOrangeColor;
+        transition: all 0.3s ease-in-out 0s;
+
+        @media (max-width: 576px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            background: $blackColor;
+            border-color: $blackColor;
+            color: #fff;
+        }
+
+        &.is-active {
+            background: $mainOrangeColor;
+            color: #fff;
+            pointer-events: none;
+        }
+    }
+
+    &__slider {
+        display: none;
+        overflow: visible;
+
+        &.is-active {
+            display: block;
+        }
+
+        &-wrapper {
+        }
+
+        &-slide {
+            @media (min-width: 992px) {
+                width: 360px !important;
+            }
+
+            @media (min-width: 767px) {
+                width: 300px !important;
+            }
+        }
+    }
+
+    &__arrows {
+        gap: 8px;
+
+        @media (min-width: 767px) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        @media (max-width: 767px) {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__arrow {
+        @media (max-width: 767px) {
+            width: 100%;
+            border-radius: 1000px;
+        }
+
+        &--prev {
+        }
+
+        &--next {
+        }
+    }
+}

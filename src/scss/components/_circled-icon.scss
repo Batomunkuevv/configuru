@@ -1,0 +1,184 @@
+@use "../base/globals" as *;
+
+.circled-icon {
+    padding: 6px;
+    width: 48px;
+    height: 48px;
+    flex: none;
+    position: relative;
+
+    &--big {
+        padding: 16px;
+        width: 128px;
+        height: 128px;
+
+        @media (max-width: 1535px) {
+            width: 96px;
+            height: 96px;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 12px;
+            width: 80px;
+            height: 80px;
+        }
+
+        @media (max-width: 576px) {
+            padding: 8px;
+            width: 64px;
+            height: 64px;
+        }
+
+        & .circled-icon__circle {
+            border-width: 2px;
+
+            &::before,
+            &::after {
+                width: 12px;
+                height: 12px;
+
+                @media (max-width: 1200px) {
+                    width: 8px;
+                    height: 8px;
+                }
+
+                @media (max-width: 576px) {
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+
+            &::before {
+                top: 30px;
+                left: -2px;
+
+                @media (max-width: 1535px) {
+                    left: -5px;
+                }
+            }
+
+            &::after {
+                bottom: 33px;
+                right: -2px;
+
+                @media (max-width: 1535px) {
+                    right: -5px;
+                }
+            }
+        }
+
+        & .circled-icon__body {
+            padding: 26px;
+
+            @media (max-width: 1535px) {
+                padding: 16px;
+            }
+
+            @media (max-width: 1200px) {
+                padding: 12px;
+            }
+        }
+    }
+
+    &--orange {
+        & .circled-icon__body {
+            background: $mainOrangeColor;
+        }
+
+        & .circled-icon__circle {
+            border-color: rgba(239, 65, 35, 0.4);
+
+            &::before,
+            &::after {
+                background: $mainOrangeColor;
+            }
+        }
+    }
+
+    &--blue {
+        & .circled-icon__body {
+            background: $mainBlueColor;
+        }
+
+        & .circled-icon__circle {
+            border-color: rgba(93, 83, 245, 0.4);
+
+            &::before,
+            &::after {
+                background: $mainBlueColor;
+            }
+        }
+    }
+
+    &--green {
+        & .circled-icon__body {
+            background: $mainGreenColor;
+        }
+
+        & .circled-icon__circle {
+            border-color: rgba(91, 186, 71, 0.4);
+
+            &::before,
+            &::after {
+                background: $mainGreenColor;
+            }
+        }
+    }
+
+    &--pink {
+        & .circled-icon__body {
+            background: $mainPinkColor;
+        }
+
+        & .circled-icon__circle {
+            border-color: rgba(236, 50, 140, 0.4);
+
+            &::before,
+            &::after {
+                background: $mainPinkColor;
+            }
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        animation: rotateCircle 10s infinite linear;
+
+        &::before {
+            top: 5px;
+            left: 5px;
+        }
+
+        &::after {
+            bottom: 7px;
+            right: 3px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 3px;
+            border-radius: 50%;
+        }
+    }
+
+    &__body {
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 100%;
+            height: 100%F;
+        }
+    }
+}

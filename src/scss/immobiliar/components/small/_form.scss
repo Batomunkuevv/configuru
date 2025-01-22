@@ -1,0 +1,72 @@
+@use "../../base/globals" as *;
+
+.form {
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+    }
+
+    &__item {
+    }
+
+    &__item--textarea {
+        grid-column: 1/3;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+
+    &__privacy {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+
+        @media (max-width: 768px) {
+            align-items: center;
+            gap: 11px;
+        }
+    }
+
+    &__privacy-checkbox {
+        flex: none;
+    }
+
+    &__privacy-text {
+        font-size: rem(13);
+        line-height: toProcent(13, 20);
+
+        & a {
+            color: #5d53f5;
+        }
+
+        & * {
+            font-size: inherit;
+            font-family: inherit;
+        }
+    }
+
+    &__btn {
+        flex: none;
+
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+    }
+}

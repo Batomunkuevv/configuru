@@ -1,0 +1,253 @@
+@use "../base/globals" as *;
+
+.hero {
+    padding-top: 93px;
+
+    @media (max-width: 1536px) {
+        padding-top: 133px;
+    }
+
+    @media (max-width: 1200px) {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+
+    &__company {
+        z-index: 2;
+        font-size: rem(210);
+        color: #ffd5ae;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -36%);
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+
+    &__decorations {
+        & .decorations__point {
+            bottom: 24.7%;
+            right: 9.7%;
+
+            @media (max-width: 992px) {
+                bottom: 52.3%;
+                right: 23px;
+            }
+        }
+
+        & .decorations__ring--blue {
+            right: 10.9%;
+            bottom: 27%;
+
+            @media (max-width: 992px) {
+                right: 44px;
+                top: 43.8%;
+            }
+        }
+
+        & .decorations__ring--small {
+            left: 51.9%;
+            top: 15.3%;
+
+            @media (max-width: 768px) {
+                top: 51.1%;
+                left: 17.2%;
+            }
+        }
+        & .decorations__ring--big {
+            bottom: 11.8%;
+            left: 60.4%;
+
+            @media (max-width: 768px) {
+                right: 12px;
+                bottom: 41.7%;
+                left: auto;
+            }
+        }
+
+        & .decorations__ring--large {
+            top: 16%;
+            left: 54.7%;
+
+            @media (max-width: 768px) {
+                top: 51.8%;
+                left: 28.1%;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: start;
+        gap: 175px;
+
+        @media (max-width: 1536px) {
+            gap: 64px;
+        }
+
+        @media (max-width: 1330px) {
+            align-items: center;
+        }
+
+        @media (max-width: 1200px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 201px;
+        }
+    }
+
+    &__content {
+        max-width: 634px;
+        flex: 1 1 auto;
+
+        @media (max-width: 1200px) {
+            max-width: unset;
+        }
+
+        & p {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 150%;
+
+            @media (max-width: 1330px) {
+                font-size: rem(18);
+            }
+
+            @media (max-width: 768px) {
+                font-size: rem(15);
+                line-height: toProcent(15, 25);
+            }
+        }
+    }
+
+    &__right {
+        position: relative;
+        width: 592px;
+        flex: none;
+
+        @media (max-width: 1330px) {
+            width: 550px;
+        }
+
+        @media (max-width: 1200px) {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        @media (max-width: 576px) {
+            max-width: 374px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(0, 50%);
+            width: 100%;
+            height: 16px;
+            background: #000000;
+            border-radius: 100%;
+            filter: blur(3.5px);
+        }
+    }
+
+    &__right-circle {
+        position: absolute;
+        top: 0;
+        right: -101px;
+        transform: translate(0, -25.7%);
+        width: 535px;
+        height: 535px;
+        background: #ef4123;
+        border-radius: 50%;
+        z-index: 1;
+
+        @media (max-width: 992px) {
+            width: 359px;
+            height: 359px;
+            right: -94px;
+            transform: translate(0, -39%);
+            z-index: -2;
+        }
+    }
+
+    &__video {
+        position: relative;
+        z-index: 3;
+        height: 454px;
+
+        @media (max-width: 768px) {
+            height: 287px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -52px;
+            left: 132px;
+            width: 111px;
+            height: 120px;
+            background: url("../images/blocks/hero/left-hand.svg") center / cover no-repeat;
+            z-index: 2;
+
+            @media (max-width: 1536px) {
+                width: 101px;
+                height: 110px;
+                left: 140px;
+                top: -40px;
+            }
+
+            @media (max-width: 1200px) {
+                width: 66px;
+                height: 75px;
+                top: -32px;
+                left: auto;
+                right: 223px;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 60px;
+            right: -33px;
+            width: 106px;
+            height: 81.02px;
+            background: url("../images/blocks/hero/right-hand.svg") center / cover no-repeat;
+            z-index: 2;
+
+            @media (max-width: 1536px) {
+                width: 106px;
+                height: 71px;
+            }
+
+            @media (max-width: 1200px) {
+                width: 67px;
+                height: 51px;
+                right: -21px;
+                top: 40px;
+            }
+        }
+    }
+
+    &__anteater {
+        position: absolute;
+        top: 0;
+        right: 75px;
+        transform: translate(0, -99%);
+
+        @media (max-width: 1536px) {
+            width: 270px;
+            right: 100px;
+            transform: translate(0, -98%);
+        }
+
+        @media (max-width: 1200px) {
+            width: 219px;
+            height: 152px;
+            right: 48px;
+        }
+    }
+}

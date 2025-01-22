@@ -1,0 +1,199 @@
+@use "../base/globals" as *;
+
+.section {
+    overflow: hidden;
+
+    &--green {
+        background: $mainGreenBgColor;
+    }
+
+    &--blue {
+        background: $mainBlueBgColor;
+    }
+
+    &--orange {
+        background: $mainOrangeBgColor;
+    }
+
+    &--white {
+        background: #fff;
+    }
+
+    &--black {
+        background: $blackColor;
+        color: #fff;
+    }
+
+    &__circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 5px solid transparent;
+
+        &--size-35 {
+            width: 35px;
+            height: 35px;
+        }
+
+        &--size-30 {
+            width: 30px;
+            height: 30px;
+        }
+
+        &--size-30 {
+            width: 30px;
+            height: 30px;
+        }
+
+        &--size-25 {
+            width: 25px;
+            height: 25px;
+        }
+
+        &--size-20 {
+            width: 20px;
+            height: 20px;
+            border-width: 3px;
+        }
+
+        &--size-15 {
+            width: 15px;
+            height: 15px;
+            border-width: 3px;
+        }
+
+        &--size-10 {
+            width: 10px;
+            height: 10px;
+            border-width: 3px;
+        }
+
+        &--green {
+            border-color: $mainGreenColor;
+        }
+
+        &--light-green {
+            border-color: $mainGreenLightColor;
+        }
+
+        &--orange {
+            border-color: $mainOrangeColor;
+        }
+
+        &--light-orange {
+            border-color: $mainOrangeLightColor;
+        }
+
+        &--blue {
+            border-color: $mainBlueColor;
+        }
+
+        &--light-blue {
+            border-color: $mainBlueLightColor;
+        }
+
+        &--fill {
+            &.section__circle--green {
+                background: $mainGreenColor;
+            }
+
+            &.section__circle--light-green {
+                background: $mainGreenLightColor;
+            }
+
+            &.section__circle--orange {
+                background: $mainOrangeColor;
+            }
+
+            &.section__circle--light-orange {
+                background: $mainOrangeLightColor;
+            }
+
+            &.section__circle--blue {
+                background: $mainBlueColor;
+            }
+
+            &.section__circle--light-blue {
+                background: $mainBlueLightColor;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 48px;
+        font-size: 60px;
+        line-height: toProcent(60, 72);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: 1200px) {
+            font-size: 40px;
+            line-height: 130%;
+            letter-spacing: unset;
+        }
+
+        @media (max-width: 767px) {
+            margin-bottom: 24px;
+            font-size: 32px;
+            line-height: toProcent(32, 40);
+        }
+
+        &:has(+ .section__text) {
+            margin-bottom: 24px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -57px;
+            left: 0;
+            transform: translateX(-25%);
+            background: $mainBlueLightColor;
+            opacity: 0.3;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            z-index: -1;
+
+            @media (max-width: 767px) {
+                width: 128px;
+                height: 128px;
+                transform: translateX(-44%);
+            }
+        }
+
+        &--green-circle {
+            &::before {
+                background: $mainGreenLightColor;
+            }
+        }
+
+        &--orange-circle {
+            &::before {
+                background: $mainOrangeLightColor;
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 48px;
+        max-width: 816px;
+        font-size: 18px;
+        line-height: toProcent(18, 28);
+
+        @media (max-width: 992px) {
+            margin-bottom: 32px;
+        }
+
+        & p {
+            &:has(+ p) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

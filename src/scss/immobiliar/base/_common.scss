@@ -1,0 +1,162 @@
+@use "globals" as *;
+
+html,
+body {
+    font-family: $fontfamily;
+    font-size: 16px;
+    color: $color__font;
+    font-weight: 500;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color__main;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    scrollbar-width: 4px;
+    scrollbar-color: $color__main #fff;
+}
+
+body {
+    &.lock {
+        overflow: hidden !important;
+    }
+}
+
+// Titles
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: rem(55);
+    line-height: toProcent(55, 45);
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        font-size: 43px;
+        line-height: 45px;
+        margin-bottom: 0;
+    }
+}
+
+h2 {
+    font-size: rem(50);
+    line-height: toProcent(50, 55);
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+        font-size: rem(43);
+        line-height: toProcent(43, 40);
+    }
+}
+
+// P
+
+p {
+    font-weight: 500;
+    font-size: rem(25);
+    line-height: toProcent(25, 30);
+
+    @media (max-width: 1200px) {
+        font-size: rem(16);
+        line-height: toProcent(16, 25);
+    }
+
+    & + p {
+        margin-top: 28px;
+
+        @media (max-width: 768px) {
+            margin-top: 18px;
+        }
+    }
+}
+
+// Section
+
+section {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @media (max-width: 1536px) {
+        overflow: hidden;
+    }
+
+    @media (max-width: 1200px) {
+        height: auto !important;
+        min-height: unset !important;
+    }
+}
+
+// Lists
+
+ol {
+    counter-reset: counter;
+
+    & li {
+        counter-increment: counter;
+    }
+}
+
+li {
+    position: relative;
+}
+
+// Links
+
+a {
+    color: inherit;
+    transition: all 0.3s ease-in-out 0s;
+
+    &:hover {
+        color: $color__main;
+    }
+}
+
+// Img
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Is visible
+
+.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+// Is hidden
+
+.is-hidden {
+    display: none !important;
+}
+
+// Full-page
+
+.fp-overflow {
+    overflow: hidden !important;
+}
+
+.fp-watermark {
+    display: none !important;
+}

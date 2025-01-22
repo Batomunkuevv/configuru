@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/components/_head.html', { 
+        'title': 'Configuru',
+        'styles': ['files/swiper-bundle.min.css', 'css/main.css']
+    })
+    <body>
+        <div class="site-wrapper">
+            @@include('html/components/_header.html',{})
+            <main class="site-page">
+                @@include('html/homepage/_hero.html',{})
+                @@include('html/sections/_industries.html',{})
+                @@include('html/sections/_unique-tool.html',{})
+                @@include('html/sections/_collaboration.html',{})
+                @@include('html/sections/_team.html',{})
+                @@include('html/sections/_companies.html',{})
+                @@include('html/sections/_why-choose-us.html',{})
+            </main>
+            @@include('html/components/_footer.html',{})
+        </div>
+        <script defer src="js/lozad.min.js"></script>
+        <script defer src="js/swiper-bundle.min.js"></script>
+        <script defer src="js/script.js"></script>
+    </body>
+</html>
