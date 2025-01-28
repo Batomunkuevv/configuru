@@ -1,6 +1,5 @@
 "use strict";
 
-
 //?==============<Add zero>============== 
 
 function addZero(number) {
@@ -9,49 +8,97 @@ function addZero(number) {
 
 //?==============</Add zero>=============
 
-//?==============<Init Header Panel>==============
+const initHeader = () => {
+    const siteHeader = document.querySelector('.site-header');
 
-function initHeaderPanel() {
+    observeSwitchLogos();
+
+    function observeSwitchLogos() {
+        const headerLogo = siteHeader.querySelector('.site-header__logo');
+
+        if (!headerLogo) return;
+
+        function checkHeaderPosition() {
+            const sectionsWithSwitch = document.querySelectorAll('.industries');
+
+            if (!sectionsWithSwitch) return;
+
+            sectionsWithSwitch.forEach(section => {
+                const sectionHeight = section.scrollHeight;
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop <= 0 && Math.abs(sectionTop) < sectionHeight) {
+                    headerLogo.classList.add('is-show-white');
+                } else {
+                    headerLogo.classList.remove('is-show-white');
+                }
+            })
+
+        }
+
+        window.addEventListener('scroll', checkHeaderPosition);
+
+
+    }
+}
+
+
+const initBurgerMenu = () => {
     const burger = document.querySelector('.burger');
-    const headerPanel = document.querySelector('.site-header__panel');
+    const burgerMenu = document.querySelector('.menu');
 
-    if (!burger || !headerPanel) return;
+    initSubmenus();
+    handleMenuAnchorsClick();
 
-    const headerLogo = document.querySelector('.site-header__logo');
-    const headerBody = document.querySelector('.site-header__body');
-    const headerLanguages = document.querySelector('.site-header__languages');
+    burger.addEventListener('click', handleBurgerClick);
 
-    initMenuItems();
+    function handleMenuAnchorsClick() {
+        const menuAnchors = burgerMenu.querySelectorAll('[data-anchor]');
 
-    burger.addEventListener('click', (e) => {
-        closeHeaderPanel();
-    })
+        if (!menuAnchors) return;
 
-    function initMenuItems() {
-        const menu = headerPanel.querySelector('.menu');
+        menuAnchors.forEach(anchor => {
+            anchor.addEventListener('click', closeBurgerMenu);
+        })
+    }
 
-        if (!menu) return;
+    function initSubmenus() {
+        const menuButtons = burgerMenu.querySelectorAll('.menu__item-button');
 
-        menu.addEventListener('click', (e) => {
-            const { target } = e;
+        if (!menuButtons) return;
 
-            if (target.classList.contains('menu__link')) {
-                closeHeaderPanel();
+        menuButtons.forEach(button => {
+            const buttonMenu = button.nextElementSibling;
+            const buttonMenuBack = buttonMenu.querySelector('.menu__submenu-back');
+
+            button.addEventListener('click', handleButtonClick);
+            buttonMenuBack.addEventListener('click', handleBackClick);
+
+            function handleBackClick() {
+                buttonMenu.classList.remove('is-open');
+            }
+
+            function handleButtonClick() {
+                if (!window.matchMedia('(max-width: 992px)').matches) return;
+
+                buttonMenu.classList.add('is-open');
+
             }
         });
     }
 
-    function closeHeaderPanel() {
-        headerBody.classList.toggle('is-active');
-        headerPanel.classList.toggle('is-active');
-        headerLanguages.classList.toggle('is-visible');
-        burger.classList.toggle('is-active');
-        headerLogo.classList.toggle('is-active');
-        document.body.classList.toggle('lock');
-    };
-}
+    function closeBurgerMenu() {
+        burger.classList.remove('is-active');
+        burgerMenu.classList.remove('is-open');
+        document.body.classList.remove('is-lock');
+    }
 
-//?==============</Init Header Panel>=============
+    function handleBurgerClick() {
+        burger.classList.toggle('is-active');
+        burgerMenu.classList.toggle('is-open');
+        document.body.classList.toggle('is-lock');
+    }
+}
 
 //?==============<Init Parallax>==============
 
@@ -86,10 +133,11 @@ function initParallax() {
 function initFullPage() {
     let page = document.querySelector('.page');
 
-    if (!page) return;
+    if (!page || window.matchMedia('(max-width: 992px)').matches) return;
 
     initFooterScrollLinks();
 
+    const normalScrollSections = document.querySelectorAll('[data-normal-scroll]');
     const fullPage = new fullpage(page, {
         autoScrolling: true,
         scrollHorizontally: true,
@@ -99,10 +147,9 @@ function initFullPage() {
         controlArrows: false,
         keyboardScrolling: false,
         easingcss3: 'cubic-bezier(0.49, 0.01, 0.27, 1)',
-        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         responsiveWidth: 1200,
-        waterEffect: true,
         scrollOverflow: false,
+        normalScrollElements: '[data-normal-scroll]',
 
         afterLoad: function (origin, destination, direction, trigger) {
             const destinationIndex = destination.index + 1;
@@ -122,15 +169,15 @@ function initFullPage() {
             playVideo(destinationSection);
 
             if (window.matchMedia('(min-width: 1200px)').matches) {
-                if (destinationSectionIndex === 0) {
+                if (destinationSectionIndex === 1) {
                     fullPage.setAllowScrolling(true, 'down');
                     page.removeEventListener('wheel', horisontalRightScroll);
                 }
 
-                if (destinationSectionIndex === 1) {
+                if (destinationSectionIndex === 2) {
                     fullPage.setAllowScrolling(false, 'down');
 
-                    if (sectionIndex === 0) {
+                    if (sectionIndex === 1) {
                         setTimeout((e) => {
                             page.addEventListener('wheel', horisontalRightScroll);
                         }, 500);
@@ -143,7 +190,7 @@ function initFullPage() {
                     }
                 }
 
-                if (destinationSectionIndex === 2) {
+                if (destinationSectionIndex === 3) {
                     fullPage.setAllowScrolling(true, 'up');
                 }
             }
@@ -184,6 +231,50 @@ function initFullPage() {
         },
 
     });
+
+    initNormalScrollSections();
+
+    function initNormalScrollSections() {
+        normalScrollSections.forEach(section => {
+            let scrollingTimeout;
+
+            const handleSectionScroll = (event) => {
+                const scrollThreshold = 50;
+
+                if (Math.abs(event.deltaY) < scrollThreshold) {
+                    return;
+                }
+
+                clearTimeout(scrollingTimeout);
+
+                scrollingTimeout = setTimeout(() => {
+
+                    const scrollTop = section.scrollTop;
+                    const scrollHeight = section.scrollHeight;
+                    const clientHeight = section.clientHeight;
+
+                    const isScrollable = scrollHeight > clientHeight;
+
+                    if (isScrollable) {
+                        if (scrollTop === 0 && event.deltaY < 0) {
+                            fullPage.moveSectionUp();
+                        } else if (scrollTop + clientHeight >= scrollHeight && event.deltaY > 0) {
+                            fullPage.moveSectionDown();
+                        }
+                    } else {
+                        if (event.deltaY > 0) {
+                            fullPage.moveSectionDown();
+                        } else if (event.deltaY < 0) {
+                            fullPage.moveSectionUp();
+                        }
+                    }
+                }, 50)
+            }
+
+            section.addEventListener('wheel', handleSectionScroll);
+        });
+    }
+
 
     function stopVideo(section) {
         const sectionElement = section.item;
@@ -460,10 +551,76 @@ function clearHashOnContentLink() {
 
 //?==============</Clear hash>=============
 
+const initNewVideos = () => {
+    const videos = document.querySelectorAll('.video');
+
+    if (!videos) return;
+
+    videos.forEach(video => {
+        const videoElement = video.querySelector('.video__element');
+        const videoBtn = video.querySelector('.video__button');
+
+        if (videoBtn) videoBtn.addEventListener('click', handleVideoBtnClick);
+        if (videoElement) videoElement.addEventListener('click', handleVideoClick);
+
+        function handleVideoClick() {
+            video.classList.add('is-paused');
+            videoElement.pause();
+        }
+
+        function handleVideoBtnClick() {
+            video.classList.remove('is-paused');
+            videoElement.play();
+        }
+    })
+
+}
+
+const initNewParallax = () => {
+    const circles = document.querySelectorAll('.section__circle');
+
+    if (!circles) return;
+
+    circles.forEach(circle => {
+        let step = 50;
+        const isReverse = circle.hasAttribute('data-reverse');
+
+        if (isReverse) {
+            step = -step;
+        }
+
+        window.addEventListener('mousemove', function (e) {
+            let x = e.clientX / window.innerWidth;
+            let y = e.clientY / window.innerHeight;
+
+            circle.style.transform = `translate(${x * step}px, ${y * step}px)`;
+        });
+
+    })
+}
+
+const initProjects = () => {
+    const projects = document.querySelectorAll('.real-estate-projects__item');
+
+    if (!projects) return;
+
+    projects.forEach(project => {
+        const projectVideo = project.querySelector('.real-estate-projects__item-video');
+
+        project.addEventListener('mouseenter', () => {
+            projectVideo.play();
+        })
+
+        project.addEventListener('mouseleave', () => {
+            projectVideo.paused();
+        })
+    })
+}
+
 
 window.addEventListener('DOMContentLoaded', (e) => {
-    // Header Panel
-    initHeaderPanel();
+    initHeader();
+    initBurgerMenu();
     // Parallax
     if (window.matchMedia('(min-width: 1200px)').matches) initParallax();
     // Full page scroll
@@ -478,4 +635,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     initScrollChangeHeader();
     // Clear hash
     clearHashOnContentLink();
+    initNewVideos();
+    initNewParallax();
+    initProjects();
 });

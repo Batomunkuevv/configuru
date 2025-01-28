@@ -19,108 +19,249 @@
 <body>
   <div class="wrapper">
     <header class="site-header">
-      <div class="site-header__body">
-        <a href="#" class="site-header__logo">
-          <img loading="lazy" src="images/immobiliar/logo.svg" alt="Logo" title="Logo" />
-          <img loading="lazy" src="images/immobiliar/logo-white.svg" alt="Logo" title="Logo" />
-        </a>
-        <div class="site-header__user">
-          <ul class="site-header__languages languages">
-            <li class="languages__item is-active">
-              <a href="#" class="languages__link">EN</a>
-            </li>
-            <li class="languages__item">
-              <a href="#" class="languages__link">DE</a>
-            </li>
-            <li class="languages__item">
-              <a href="#" class="languages__link">IT</a>
+      <div class="container">
+        <div class="site-header__body">
+          <a href="/homepage.html" class="site-header__logo">
+            <div class="site-header__logo-ibg ibg">
+              <img class="site-header__logo-item site-header__logo-item--black" width="133" height="40" src="images/logo.svg" alt="Configuru Logo" title="Configuru Logo" />
+              <img class="site-header__logo-item site-header__logo-item--white" width="133" height="40" src="images/logo-white.svg" alt="Configuru Logo" title="Configuru Logo" />
+            </div>
+          </a>
+          <nav class="site-header__menu menu">
+            <div class="menu__container container">
+              <div class="menu__top">
+                <div class="menu__title">Menu</div>
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <button type="button" class="menu__item-button">
+                      Industries
+                      <span class="menu__item-button-icon">
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.409605 0.909574C0.735693 0.583487 1.26439 0.583487 1.59047 0.909574L6.00004 5.31914L10.4096 0.909574C10.7357 0.583487 11.2644 0.583487 11.5905 0.909574C11.9166 1.23566 11.9166 1.76435 11.5905 2.09044L6.59047 7.09044C6.26439 7.41653 5.73569 7.41653 5.40961 7.09044L0.409605 2.09044C0.0835171 1.76435 0.0835171 1.23566 0.409605 0.909574Z" fill="white" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="menu__submenu">
+                      <button type="button" class="menu__submenu-back">
+                        <span class="menu__submenu-back-icon">
+                          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70711 13.7071C7.31658 14.0976 6.68342 14.0976 6.29289 13.7071L0.292894 7.70711C-0.0976304 7.31658 -0.0976303 6.68342 0.292894 6.29289L6.29289 0.292893C6.68342 -0.0976316 7.31658 -0.0976315 7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L2.41421 7L7.70711 12.2929C8.09763 12.6834 8.09763 13.3166 7.70711 13.7071Z" fill="currentColor" />
+                          </svg>
+                        </span>
+                        Back
+                      </button>
+                      <ul class="menu__sublist">
+                        <li class="menu__subitem">
+                          <a href="#" class="menu__sublink">Real estate</a>
+                        </li>
+                        <li class="menu__subitem">
+                          <a href="#" class="menu__sublink">Retail / Wholesale</a>
+                        </li>
+                        <li class="menu__subitem">
+                          <a href="#" class="menu__sublink">Transportation</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu__item">
+                    <a data-anchor href="#references" class="menu__link">References</a>
+                  </li>
+                  <li class="menu__item">
+                    <a data-anchor href="#team" class="menu__link">Our team</a>
+                  </li>
+                  <li class="menu__item">
+                    <a data-anchor href="#contact-us" class="menu__link">Contact us</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu__bottom">
+                <ul class="menu__contacts">
+                  <li class="menu__contact">
+                    <a href="tel:+498920175161" class="menu__contact-link">+49 89 201 75 161</a>
+                  </li>
+                  <li class="menu__contact">
+                    <a href="mailto:info@moebelita.com" class="menu__contact-link">info@moebelita.com</a>
+                  </li>
+                </ul>
+                <ul class="menu__terms">
+                  <li class="menu__term">
+                    <a href="#" class="menu__term-link">Impressum</a>
+                  </li>
+                  <li class="menu__term">
+                    <a href="#" class="menu__term-link">Privacy policy</a>
+                  </li>
+                </ul>
+                <p class="menu__copyright">© Copyright 2022 Möbelita</p>
+              </div>
+            </div>
+          </nav>
+          <ul class="site-header__languages">
+            <li class="site-header__language is-current">EN</li>
+            <li class="site-header__language">
+              <a href="#" class="site-header__language-link">DE</a>
             </li>
           </ul>
           <div class="site-header__burger burger">
-            <div class="burger__text">Menu</div>
-            <div class="burger__btn">
-              <span class="burger__line"></span>
-              <span class="burger__line"></span>
-              <span class="burger__line"></span>
-            </div>
+            <span class="burger__line"></span>
           </div>
-        </div>
-      </div>
-      <div class="site-header__panel">
-        <div class="site-header__company company">Möbelita</div>
-        <nav class="menu">
-          <ol class="menu__list">
-            <li class="menu__item">
-              <a href="#why-we" class="menu__link">Why ImmobiliAR</a>
-            </li>
-            <li class="menu__item">
-              <a href="#story" class="menu__link">Success stories</a>
-            </li>
-            <li class="menu__item">
-              <a href="#call-to" class="menu__link">Contact us</a>
-            </li>
-          </ol>
-        </nav>
-        <div class="site-header__bottom">
-          <span class="site-header__ copyright copyright">© Copyright 2023 Möbelita</span>
-          <ul class="site-header__contacts contacts-links">
-            <li class="contacts-links__item">
-              <a href="#" class="contacts-links__link">+49 89 201 75 161</a>
-            </li>
-            <li class="contacts-links__item">
-              <a href="#" class="contacts-links__link">info@mobilliar.de</a>
-            </li>
-            <li class="contacts-links__item">
-              <a href="#" class="contacts-links__link">Datenschutz</a>
-            </li>
-            <li class="contacts-links__item">
-              <a href="#" class="contacts-links__link">Impressum</a>
-            </li>
-          </ul>
-          <a href="#" class="privacy">Privacy Policy</a>
         </div>
       </div>
     </header>
 
     <main class="page">
-      <section class="hero">
-        <div class="hero__company company">Configuru</div>
-        <ul class="hero__decorations decorations">
-          <li data-parallax="reverse" class="decorations__ring decorations__ring--small decorations__ring--light-orange"></li>
-          <li data-parallax="reverse" class="decorations__ring decorations__ring--middle decorations__ring--blue"></li>
-          <li data-parallax class="decorations__ring decorations__ring--big decorations__ring--light-orange"></li>
-          <li data-parallax class="decorations__ring decorations__ring--large"></li>
-          <li data-parallax="" class="decorations__point decorations__point--green"></li>
-        </ul>
+      <section data-normal-scroll class="section section--orange hero-industry">
         <div class="container">
-          <div class="hero__body">
-            <div class="hero__content">
-              <h1 class="hero__title title">
-                <span class="title__circle"></span> ImmobiliAR®
+          <div class="hero-industry__circle hero-industry__circle--orange section__circle section__circle--orange section__circle--size-35"></div>
+          <div class="hero-industry__circle hero-industry__circle--light-orange-25 section__circle section__circle--light-orange section__circle--size-25"></div>
+          <div data-reverse class="hero-industry__circle hero-industry__circle--light-orange-15 section__circle section__circle--light-orange section__circle--size-15"></div>
+          <div class="hero-industry__circle hero-industry__circle--blue section__circle section__circle--blue section__circle--size-20"></div>
+          <div data-reverse class="hero-industry__circle hero-industry__circle--green section__circle section__circle--green section__circle--fill section__circle--size-10"></div>
+          <div class="hero-industry__body">
+            <div class="hero-industry__content">
+              <h1 class="section__title section__title--orange-circle hero-industry__title">
+                FurniPlan®: Redefining Furniture Design and Customer Experiences with 3D Visualization
               </h1>
-              <p>
-                is an real estate sales platform, powered by AI and latest advancements in 3D technology, it can show the flat in cinematic quality. The interior objects can be configured like in
-                a computer game – according to the customer preferences. During the process, the customers fall in love with their future property and are more likely to make the purchase. And the
-                salesman has all the necessary tools like (CRM, Price-management, Web-analytics and Calendar toll) at his fingertips
-              </p>
-            </div>
-            <div class="hero__right">
-              <div class="hero__right-circle"></div>
-              <div class="hero__video ipad">
-                <div class="hero__anteater">
-                  <img src="images/immobiliar/hero/anteater.svg" alt title />
-                </div>
-                <div class="ipad__frame ipad__frame--video is-paused">
-                  <div class="ipad__btn">
-                    <img src="images/icons/btn-play.svg" alt title />
+              <ul class="hero-industry__list">
+                <li class="hero-industry__list-item">
+                  <div class="hero-industry__list-item-icon circled-icon circled-icon--green">
+                    <div class="circled-icon__circle"></div>
+                    <div class="circled-icon__body">
+                      <img data-lozad src="images/placeholder.png" data-src="images/icons/users.svg" alt="Users icon" title="Users icon" />
+                    </div>
                   </div>
-                  <video class="ipad__item" loop>
-                    <source src="files/videos/hero-video.mp4" type="video/mp4;" />
+                  <p class="hero-industry__list-item-text">
+                    Reduce production costs by replacing physical prototypes with virtual 3D models, saving up to 20% on materials and labor
+                  </p>
+                </li>
+                <li class="hero-industry__list-item">
+                  <div class="hero-industry__list-item-icon circled-icon circled-icon--blue">
+                    <div class="circled-icon__circle"></div>
+                    <div class="circled-icon__body">
+                      <img data-lozad src="images/placeholder.png" data-src="images/icons/users.svg" alt="Users icon" title="Users icon" />
+                    </div>
+                  </div>
+                  <p class="hero-industry__list-item-text">
+                    Shorten design cycles with rapid iterations, cutting development time by 30-40% compared to traditional methods
+                  </p>
+                </li>
+                <li class="hero-industry__list-item">
+                  <div class="hero-industry__list-item-icon circled-icon circled-icon--orange">
+                    <div class="circled-icon__circle"></div>
+                    <div class="circled-icon__body">
+                      <img data-lozad src="images/placeholder.png" data-src="images/icons/users.svg" alt="Users icon" title="Users icon" />
+                    </div>
+                  </div>
+                  <p class="hero-industry__list-item-text">
+                    Boost customer engagement through interactive 3D configurators that increase sales conversions by 25% and reduce returns by 20%
+                  </p>
+                </li>
+                <li class="hero-industry__list-item">
+                  <div class="hero-industry__list-item-icon circled-icon circled-icon--orange">
+                    <div class="circled-icon__circle"></div>
+                    <div class="circled-icon__body">
+                      <img data-lozad src="images/placeholder.png" data-src="images/icons/users.svg" alt="Users icon" title="Users icon" />
+                    </div>
+                  </div>
+                  <p class="hero-industry__list-item-text">
+                    Enhance collaboration and accuracy by enabling teams to work on shared digital models, reducing design errors by 35% and speeding up
+                    decision- making by 45%
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="hero-industry__right">
+              <div class="hero-industry__right-circle anteater-circle anteater-circle--orange"></div>
+              <div class="hero-industry__anteater">
+                <div class="hero-industry__anteater-ibg ibg">
+                  <img width="338" height="183" src="images/industry/hero/anteater.png" alt="Anteater" title="Anteater" />
+                </div>
+              </div>
+              <div class="hero-industry__right-hand">
+                <div class="hero-industry__right-hand-ibg ibg">
+                  <img width="94" height="72" src="images/industry/hero/right-hand.png" alt="Hand" title="Hand" />
+                </div>
+              </div>
+              <div class="hero-industry__video video is-paused">
+                <div class="hero-industry__left-hand">
+                  <div class="hero-industry__left-hand-ibg ibg">
+                    <img width="91" height="71" src="images/industry/hero/left-hand.png" alt="Hand" title="Hand" />
+                  </div>
+                </div>
+                <div class="hero-industry__video-ibg video__ibg">
+                  <button type="button" class="video__button">
+                    <svg width="33" height="38" viewBox="0 0 33 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M32.1036 19.0001L0.448466 37.2762L0.448467 0.723931L32.1036 19.0001Z" fill="currentColor" />
+                    </svg>
+                  </button>
+                  <video loop playsinline class="video__element">
+                    <source src="files/videos/real-estate/hero.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>
             </div>
+            <a data-anchor href="#unique-tool" class="hero-industry__scroll-button scroll-button">
+              <span class="scroll-button__icon">
+                <svg width="16" height="50" viewBox="0 0 16 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0711 42.8431L8.70716 49.2071C8.31663 49.5976 7.68347 49.5976 7.29294 49.2071L0.928983 42.8431C0.538458 42.4526 0.538458 41.8195 0.928983 41.4289C1.31951 41.0384 1.95267 41.0384 2.3432 41.4289L7.00005 46.0858L7.00005 0.5L9.00005 0.5L9.00005 46.0858L13.6569 41.4289C14.0474 41.0384 14.6806 41.0384 15.0711 41.4289C15.4616 41.8195 15.4616 42.4526 15.0711 42.8431Z" fill="currentColor" />
+                </svg>
+              </span>
+            </a>
           </div>
+        </div>
+      </section>
+      <section data-normal-scroll class="real-estate-projects">
+        <ul class="real-estate-projects__decorations decorations">
+          <li data-parallax class="decorations__ring decorations__ring--big decorations__ring--blue"></li>
+          <li data-parallax class="decorations__ring decorations__ring--middle decorations__ring--blue"></li>
+          <li data-parallax="reverse" class="decorations__point decorations__point--light-orange"></li>
+          <li data-parallax class="decorations__ring decorations__ring--big decorations__ring--blue"></li>
+          <li data-parallax class="decorations__ring decorations__ring--large decorations__ring--light-orange"></li>
+          <li data-parallax="reverse" class="decorations__ring decorations__ring--small decorations__ring--violet"></li>
+        </ul>
+        <div class="real-estate-projects__container container">
+          <h2 class="real-estate-projects__title title">
+            <div class="real-estate-projects__title-circle title__circle"></div>
+            Bathroom & Furniture Configuration
+          </h2>
+          <div class="real-estate-projects__circle"></div>
+          <ul class="real-estate-projects__list">
+            <li class="real-estate-projects__item">
+              <article class="real-estate-projects__item-body">
+                <a href="/project.html" class="real-estate-projects__item-link"></a>
+                <div class="real-estate-projects__item-background">
+                  <video muted loop playsinline class="real-estate-projects__item-video">
+                    <source src="files/videos/projects/01/preview.mp4" type="video/mp4" />
+                  </video>
+                  <div class="real-estate-projects__item-background-image">
+                    <img src="images/immobiliar/blocks/projects/01-preview.png" alt="Project" title="Project" />
+                  </div>
+                </div>
+                <h3 class="real-estate-projects__item-title">3D Visualization and Virtual Tour of a Prestigious Luxury Project in New York</h3>
+                <p class="real-estate-projects__item-description">
+                  Our team has crafted a cutting-edge 3D tour for an iconic luxury development in New York, celebrated as one of the most slender
+                  skyscrapers in the world.
+                </p>
+              </article>
+            </li>
+            <li class="real-estate-projects__item">
+              <article class="real-estate-projects__item-body">
+                <a href="/project.html" class="real-estate-projects__item-link"></a>
+                <div class="real-estate-projects__item-background">
+                  <video muted loop playsinline class="real-estate-projects__item-video">
+                    <source src="files/videos/projects/02/preview.mp4" type="video/mp4" />
+                  </video>
+                  <div class="real-estate-projects__item-background-image">
+                    <img src="images/immobiliar/blocks/projects/02-preview.png" alt="Project" title="Project" />
+                  </div>
+                </div>
+                <h3 class="real-estate-projects__item-title">3D Visualization and Virtual Tour of a Luxurious Villa in the Azores</h3>
+                <p class="real-estate-projects__item-description">
+                  Our team has developed a state-of-the-art 3D visualization and interactive virtual tour for a prestigious villa located in the
+                  breathtaking natural surroundings of the Azores.
+                </p>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
       <section data-anchor="why-we" class="render">
@@ -158,7 +299,7 @@
                 <h2>Static renderings</h2>
                 <div class="render__ipad ipad">
                   <div class="ipad__frame">
-                    <img class="ipad__item" src="images/immobiliar/render/staticVSdynamic.png" alt title />
+                    <img class="ipad__item" src="images/immobiliar/blocks/render/staticVSdynamic.png" alt title />
                   </div>
                 </div>
               </div>
@@ -292,7 +433,7 @@
                 </div>
               </div>
               <div class="content__anteater">
-                <img src="images/immobiliar/content/anteater.svg" alt title />
+                <img src="images/immobiliar/blocks/content/anteater.svg" alt title />
               </div>
               <div class="content__circle decoration-circle"></div>
             </div>
@@ -301,7 +442,7 @@
       </section>
       <section data-anchor="atmosphere" class="atmosphere">
         <div class="atmosphere__hand">
-          <img src="images/immobiliar/atmosphere/hand.svg" alt title />
+          <img src="images/immobiliar/blocks/atmosphere/hand.svg" alt title />
         </div>
         <ul class="atmosphere__decorations decorations">
           <li data-parallax="reverse" class="decorations__ring decorations__ring--small decorations__ring--light-orange"></li>
@@ -339,7 +480,7 @@
 
       <section data-anchor="animated" class="animated simple-block simple-block--violet">
         <div class="animated__hand">
-          <img src="images/immobiliar/animated/hand.svg" title alt />
+          <img src="images/immobiliar/blocks/animated/hand.svg" title alt />
         </div>
         <ul class="simple-block__decorations decorations">
           <li data-parallax="reverse" class="decorations__ring decorations__ring--small decorations__ring--light-orange"></li>
@@ -536,7 +677,7 @@
               <div class="swiper-slide">
                 <div class="review">
                   <div class="review__icon">
-                    <img src="images/immobiliar/reviews/teammate.png" alt title />
+                    <img src="images/immobiliar/blocks/reviews/teammate.png" alt title />
                   </div>
                   <p>
                     Möbelita Team has developed a wonderful sales tool. We do not need to confuse our customers anymore with 2D plans, small samples and abstract pictures. Each customer can
@@ -547,14 +688,14 @@
                     prospects become our customers andbring their friends to us!​
                   </p>
                   <div class="review__logo">
-                    <img src="images/immobiliar/reviews/logo.svg" alt title />
+                    <img src="images/immobiliar/blocks/reviews/logo.svg" alt title />
                   </div>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="review">
                   <div class="review__icon">
-                    <img src="images/immobiliar/reviews/teammate.png" src="images/immobiliar/reviews/teammate.png" alt="Teammate" title="Teammate" />
+                    <img src="images/immobiliar/blocks/reviews/teammate.png" src="images/immobiliar/blocks/reviews/teammate.png" alt="Teammate" title="Teammate" />
                   </div>
                   <p>
                     Möbelita Team has developed a wonderful sales tool. We do not need to confuse our customers anymore with 2D plans, small samples and abstract pictures. Each customer can
@@ -565,7 +706,7 @@
                     prospects become our customers andbring their friends to us!​
                   </p>
                   <div class="review__logo">
-                    <img src="images/immobiliar/reviews/logo.svg" src="images/immobiliar/reviews/logo.svg" alt="Logo" title="Logo" />
+                    <img src="images/immobiliar/blocks/reviews/logo.svg" src="images/immobiliar/blocks/reviews/logo.svg" alt="Logo" title="Logo" />
                   </div>
                 </div>
               </div>
@@ -647,17 +788,17 @@
             </div>
             <div class="advantages__right">
               <div class="advantages__gear advantages__gear--small">
-                <img src="images/immobiliar/advantages/gear-small.svg" alt title />
+                <img src="images/immobiliar/blocks/advantages/gear-small.svg" alt title />
               </div>
               <div class="advantages__gear advantages__gear--middle">
-                <img src="images/immobiliar/advantages/gear-middle.svg" alt title />
+                <img src="images/immobiliar/blocks/advantages/gear-middle.svg" alt title />
               </div>
               <div class="advantages__gear advantages__gear--big">
-                <img src="images/immobiliar/advantages/gear-big.svg" alt title />
+                <img src="images/immobiliar/blocks/advantages/gear-big.svg" alt title />
               </div>
               <div class="advantages__circle decoration-circle decoration-circle--black"></div>
               <div class="advantages__anteater">
-                <img src="images/immobiliar/advantages/anteater.svg" alt title />
+                <img src="images/immobiliar/blocks/advantages/anteater.svg" alt title />
               </div>
             </div>
           </div>
@@ -714,11 +855,11 @@
             <div class="call-to__right">
               <div class="call-to__circle decoration-circle decoration-circle--green"></div>
               <div class="call-to__anteater">
-                <img src="images/immobiliar/call-to/anteater.svg" alt title />
+                <img src="images/immobiliar/blocks/call-to/anteater.svg" alt title />
               </div>
               <div class="call-to__dialog">
                 <div class="call-to__dialog-icon">
-                  <img src="images/immobiliar/call-to/list.png" alt title />
+                  <img src="images/immobiliar/blocks/call-to/list.png" alt title />
                 </div>
                 <b class="call-to__dialog-title"> Сontact us </b>
                 <p class="call-to__dialog-text">We will answer all your questions</p>
@@ -730,14 +871,16 @@
 
     </main>
     <footer class="footer">
-      <div class="footer__body">
-        <div class="footer__copyright copyright">© Copyright 2023 Möbelita</div>
-        <div class="footer__navigation">
-          <div class="footer__number-block">01</div>
-          <div class="footer__navigation-separate">/</div>
-          <div class="footer__scroll-links">
-            <a data-scroll="down" class="footer__scroll-link" href="#">Scroll down</a>
-            <a data-scroll="up" class="footer__scroll-link is-hidden" href="#">Scroll up</a>
+      <div class="container">
+        <div class="footer__body">
+          <div class="footer__copyright copyright">© Copyright 2023 Möbelita</div>
+          <div class="footer__navigation">
+            <div class="footer__number-block">01</div>
+            <div class="footer__navigation-separate">/</div>
+            <div class="footer__scroll-links">
+              <a data-scroll="down" class="footer__scroll-link" href="#">Scroll down</a>
+              <a data-scroll="up" class="footer__scroll-link is-hidden" href="#">Scroll up</a>
+            </div>
           </div>
         </div>
       </div>

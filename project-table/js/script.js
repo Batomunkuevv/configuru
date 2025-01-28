@@ -5,8 +5,24 @@ const fillTable = () => {
             slug: 'homepage.html'
         },
         {
-            name: 'Immobiliar',
+            name: 'Real estate',
             slug: 'immobiliar.html'
+        },
+        {
+            name: 'Furnuture',
+            slug: 'furniture.html'
+        },
+        {
+            name: 'Transportation',
+            slug: 'transportation.html'
+        },
+        {
+            name: 'Retail',
+            slug: 'retail.html'
+        },
+        {
+            name: 'Project',
+            slug: 'project.html'
         },
 
     ]

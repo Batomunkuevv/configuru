@@ -15,29 +15,14 @@ class ConfiguruSite {
         this.initHeader();
         this.initAnchors();
         this.initIndustries();
+        this.initVideos();
     }
 
     initIndustries() {
         const industries = document.querySelectorAll('.industries__industry');
         const industriesVideo = document.querySelector('.industries__video');
-        const industriesVideos = [
-            {
-                industry: 'real-estate',
-                src: '/configuru/files/videos/industries/real-estate.mp4'
-            },
-            {
-                industry: 'furniture',
-                src: '/configuru/files/videos/industries/furniture.mp4'
-            },
-            {
-                industry: 'transportation',
-                src: '/configuru/files/videos/industries/transportation.mp4'
-            },
-            {
-                industry: 'retail',
-                src: '/configuru/files/videos/industries/retail.mp4'
-            },
-        ]
+        const industriesVideos = getIndustriesVideos();
+
 
         if (!industries || !industriesVideo || this.MAX_MEDIA_1200.matches) return;
 
@@ -79,6 +64,55 @@ class ConfiguruSite {
             }
         });
 
+        function getIndustriesVideos() {
+            switch (true) {
+                case window.location.href.includes('localhost'): {
+                    return [
+                        {
+                            industry: 'real-estate',
+                            src: '/files/videos/industries/real-estate.mp4'
+                        },
+                        {
+                            industry: 'furniture',
+                            src: '/files/videos/industries/furniture.mp4'
+                        },
+                        {
+                            industry: 'transportation',
+                            src: '/files/videos/industries/transportation.mp4'
+                        },
+                        {
+                            industry: 'retail',
+                            src: '/files/videos/industries/retail.mp4'
+                        },
+                    ]
+                }
+                case window.location.href.includes('github.io'): {
+                    return [
+                        {
+                            industry: 'real-estate',
+                            src: '/configuru/files/videos/industries/real-estate.mp4'
+                        },
+                        {
+                            industry: 'furniture',
+                            src: '/configuru/files/videos/industries/furniture.mp4'
+                        },
+                        {
+                            industry: 'transportation',
+                            src: '/configuru/files/videos/industries/transportation.mp4'
+                        },
+                        {
+                            industry: 'retail',
+                            src: '/configuru/files/videos/industries/retail.mp4'
+                        },
+                    ]
+                }
+                default: {
+                    return CONFIGURU_THEME.industriesVideos;
+
+                }
+            }
+        }
+
         function hideIndustriesBackground() {
             const industriesBackground = document.querySelector('.industries__background');
 
@@ -91,7 +125,6 @@ class ConfiguruSite {
     initHeader() {
         const siteHeader = document.querySelector('.site-header');
 
-        animateHeader();
         observeSwitchLogos();
 
         function observeSwitchLogos() {
@@ -121,25 +154,6 @@ class ConfiguruSite {
 
 
         }
-
-        function animateHeader() {
-            let lastScrollTop = 0;
-
-
-            const handleWindowScroll = () => {
-                const scrollTop = document.documentElement.scrollTop;
-
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    siteHeader.classList.add('is-scrolling-down');
-                } else {
-                    siteHeader.classList.remove('is-scrolling-down');
-                }
-
-                lastScrollTop = scrollTop;
-            }
-
-            window.addEventListener('scroll', handleWindowScroll);
-        }
     }
 
     initAnchors() {
@@ -147,48 +161,29 @@ class ConfiguruSite {
 
         if (!anchors) return;
 
-        initScrollOnLoad();
-
         anchors.forEach(link => {
+            const href = link.getAttribute('href');
+            const scrollTarget = document.querySelector(href);
+
+            if (!scrollTarget) {
+                moveAnchorToHomepage(link);
+                return;
+            }
+
             link.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                const href = this.getAttribute('href');
-                const scrollTarget = document.querySelector(href);
-
-                if (!scrollTarget) return;
-
-                const topOffset = 0;
-                const elementPosition = scrollTarget.getBoundingClientRect().top;
-                const offsetPosition = elementPosition - topOffset;
-
-                window.scrollBy({
-                    top: offsetPosition,
+                scrollTarget.scrollIntoView({
                     behavior: 'smooth'
                 });
             });
+
+
         });
 
-        function initScrollOnLoad() {
-            const hashIndex = [...window.location.href].findIndex(item => item === '#');
-
-            if (hashIndex === -1) return;
-
-            const scrollTargetId = window.location.href.slice(hashIndex);
-
-            if (scrollTargetId === '#') return;
-
-            const scrollTarget = document.querySelector(scrollTargetId);
-            const topOffset = headerHeight;
-            const elementPosition = scrollTarget.getBoundingClientRect().top;
-            const offsetPosition = elementPosition - topOffset;
-
-            window.scrollBy({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+        function moveAnchorToHomepage(anchor) {
+            anchor.href = `/${anchor.hash}`
         }
-
     }
 
 
@@ -308,9 +303,21 @@ class ConfiguruSite {
             let options = { ...DEFAULT_OPTIONS };
 
             switch (type) {
+                case "project-videos": {
+                    options = {
+                        ...options,
+                        loop: true,
+                        navigation: {
+                            prevEl: '.hero-project__videos-arrow--prev',
+                            nextEl: '.hero-project__videos-arrow--next',
+                        }
+                    }
+                    break;
+                }
                 case "team": {
                     const teamPrev = slider.closest('.team__body').querySelector('.team__arrow--prev');
                     const teamNext = slider.closest('.team__body').querySelector('.team__arrow--next');
+
                     options = {
                         ...options,
                         slidesPerView: 2,
@@ -395,6 +402,32 @@ class ConfiguruSite {
             }
         })
     }
+
+    initVideos() {
+        const videos = document.querySelectorAll('.video');
+
+        if (!videos) return;
+
+        videos.forEach(video => {
+            const videoElement = video.querySelector('.video__element');
+            const videoBtn = video.querySelector('.video__button');
+
+            if (videoBtn) videoBtn.addEventListener('click', handleVideoBtnClick);
+            if (videoElement) videoElement.addEventListener('click', handleVideoClick);
+
+            function handleVideoClick() {
+                video.classList.add('is-paused');
+                videoElement.pause();
+            }
+
+            function handleVideoBtnClick() {
+                video.classList.remove('is-paused');
+                videoElement.play();
+            }
+        })
+
+    }
+
 }
 
 window.addEventListener('DOMContentLoaded', new ConfiguruSite());
